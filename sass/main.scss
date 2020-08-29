@@ -1,0 +1,10 @@
+//All the variables and mixins 
+@import "variables.scss";
+@import "mixins.scss";
+
+//global css
+@import "globals.scss";
+
+//rest of the components
+@import "nav.scss";
+@import "masthead.scss";
