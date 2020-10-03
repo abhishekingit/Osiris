@@ -17,6 +17,18 @@ header.masthead {
     h1 {
       font-size: 2rem;
     }
+    form {
+      button {
+        background-color: $color-grad-1;
+        border-color: $color-grad-1;
+         &:hover {
+           background-color: $color-marsred;
+           border-color: $color-marsred;
+         }
+          
+        }
+    }
+
     @media (min-width: 768px) {
       padding-top: 12rem;
       padding-bottom: 12rem;

@@ -1,0 +1,80 @@
+.cards {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    &-item {
+      max-width: 20rem;
+      
+      
+    }
+    &-curiosity {
+        height: 28rem;
+        background-image: linear-gradient(to right bottom, rgba($black,0.6), rgba($color-black,0.5)), url(../img/curiosity.jpg);
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 1.5rem 4rem rgba($color-black,.25);
+        position: relative;
+        border-radius: 3px;
+
+        &-title {
+            color: $white;
+            font-size: 2.5rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            
+        }
+
+                
+      }
+      &-opportunity {
+        height: 28rem;
+        background-image: linear-gradient(to right bottom, rgba($black,0.6), rgba($color-black,0.5)), url(../img/opportunity.jpg);
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 1.5rem 4rem rgba($color-black,.25);
+        position: relative;
+        border-radius: 3px;
+
+        &-title {
+            color: $white;
+            font-size: 2.5rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            
+        }
+
+        
+        
+        
+      }
+      &-spirit {
+        height: 28rem;
+        background-image: linear-gradient(to right bottom, rgba($black,0.6), rgba($color-black,0.5)), url(../img/spirit.jpg);
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 1.5rem 4rem rgba($color-black,.25);
+        position: relative;
+        border-radius: 3px;
+
+        &-title {
+            color: $white;
+            font-size: 2.5rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            
+        }
+
+        
+        
+        
+      }
+  }
+  
