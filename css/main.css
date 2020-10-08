@@ -107,3 +107,29 @@ footer.footer {
   color: #FFFFFF; }
   footer.footer li > a {
     color: #eb5757; }
+
+.showcase .showcase-text {
+  padding: 3rem; }
+  .showcase .showcase-text h2 {
+    font-size: 4rem;
+    margin-bottom: 1rem; }
+  .showcase .showcase-text .photo__details-list {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    .showcase .showcase-text .photo__details-list .photo__item {
+      font-family: 'Lato', sans-serif;
+      display: flex;
+      margin-bottom: 2rem;
+      font-weight: 600;
+      font-size: 1.2rem; }
+      .showcase .showcase-text .photo__details-list .photo__item .rover__name {
+        flex: 0 0 auto;
+        margin-right: .5rem; }
+
+.showcase .showcase-img {
+  padding: 3rem; }
+
+@media (min-width: 768px) {
+  .showcase .showcase-text {
+    padding: 7rem; } }
