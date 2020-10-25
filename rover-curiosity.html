@@ -13,6 +13,9 @@
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+  <!--Lightbox CSS-->
+  <link rel="stylesheet" href="dist/css/lightbox.min.css">
+
   <!-- Custom fonts for this template -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -57,16 +60,43 @@
         <div class="row">
           <div class="col-xl-9 mx-auto">
             <h1 class="mb-1">Curiosity on <span style="color: #eb5757;">Mars</span></h1>
-            <h4 class="mb-1">Enter a Martian SOL</h1>
+            <h4 class="mb-1">Select a Camera and enter a Martian SOL</h1>
           </div>
           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto mt-5">
-            <form>
+            <!-- <form>
               <div class="form-row">
                 <div class="col-12 col-md-9 mb-2 mb-md-0">
                   <input type="martian-sol" class="form-control form-control-lg" placeholder="Enter Martian SOL...">
                 </div>
                 <div class="col-12 col-md-3">
                   <button type="submit" class="btn btn-block btn-lg btn-primary">Search</button>
+                </div>
+              </div>
+            </form> -->
+            <form>
+              <div class="form-row align-center">
+                <div class="col-auto my-1">
+                  <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                    <option selected>Camera</option>
+                    <option value="1">Front Hazard avoidance camera</option>
+                    <option value="2">Rear Hazard avoidance camera</option>
+                    <option value="3">Chemistry and Camera Complex </option>
+                    <option value="4">Mast camera</option>
+                    <option value="5">Mars Hand Lens Imager</option>
+                    <option value="6">Mars Descent Imager</option>
+                    <option value="7">Navigation camera</option>
+
+                  </select>
+                </div>
+  
+                <div class="col-auto my-1">
+                  <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                  <input type="martian-sol" class="form-control form-control-md" placeholder="Enter Martian SOL...">
+                </div>
+               
+                <div class="col-auto my-1">
+                  <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </div>
             </form>
@@ -80,122 +110,21 @@
       <div class="overlay"></div>
       <div class="container p-0 my-4">
         <div class="row no-gutters">
-  
-          <div class="col-lg-6 order-lg-2 text-white showcase-img">
-            <!-- <img src="img/Rover samples/RHAZ.jpg" alt="rear hazard avoidance cam" width="512" height="512"> -->
+          <a class="demo" href="./img/Rover samples/FHAZ-1.jpg" data-lightbox="gallery">
+            <img class="example-image" src="./img/Rover samples/FHAZ-1.jpg" alt="image-1">
+          </a>
+          
+          <a class="demo" href="./img/Rover samples/FHAZ-2.jpg" data-lightbox="gallery">
+            <img class="example-image" src="./img/Rover samples/FHAZ-2.jpg" alt="image-2">
+          </a>
+          
             
-          </div>
-          <div class="row row-cols-1 row-cols-md-2">
-            <div class="col mb-4">
-              <div class="card">
-                <img src="img/RHAZ.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">RHAZ(Rear Hazard Avoidance Camera)</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col mb-4">
-              <div class="card">
-                <img src="img/FHAZ.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">FHAZ(Front Hazard Avoidance Camera)</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col mb-4">
-              <div class="card">
-                <img src="img/MAST.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Mast Camera</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col mb-4">
-              <div class="card">
-                <img src="img/CHEM.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Chemistry Camera</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col mb-4">
-              <div class="card">
-                <img src="img/NAV.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Navigation Camera</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col mb-4">
-              <div class="card">
-                <img src="img/MARDI.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Mars Descent Imager</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col mb-4">
-              <div class="card">
-                <img src="img/MAHLI.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Mars Hand Lens Imager</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          
+          
           
         </div>  
-        <div class="row no-gutters">
-  
-          <div class="col-lg-6 order-lg-2 text-white showcase-img">
-            <!-- <img src="img/Rover samples/FHAZ.jpg" alt="front hazard avoidance cam" width="512" height="512"> -->
-                      
-
-          </div>
-          
-        </div>
-        <div class="row no-gutters">
-  
-          <!-- <div class="col-lg-6 order-lg-2 text-white showcase-img"></div>
-          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-            <h2 class="camera">NAV</h2>
-            <ul class="photo__details-list">
-              <li class="photo__item">
-                <div class="rover__name">Rover :</div>
-                <div class="rover__value">Curiosity</div>
-              </li>
-              <li class="photo__item">
-                <div class="rover__name">SOL :</div>
-                <div class="rover__value">1000</div>
-              </li>
-              <li class="photo__item">
-                <div class="rover__name">Date(Earth) :</div>
-                <div class="rover__value">2015-05-30</div>
-              </li>
-              <li class="photo__item">
-                <div class="rover__name">Launch date :</div>
-                <div class="rover__value">2011-11-26</div>
-              </li>
-              <li class="photo__item">
-                <div class="rover__name">Landing date :</div>
-                <div class="rover__value">2012-08-06</div>
-              </li>
-            </ul>
-                       
-            
-          </div> -->
-        </div>  
-        <div class="row no-gutters">
-  
-          
-        </div>       
+        
+        
         
       </div>
     </section>
@@ -250,5 +179,8 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/path/to/cdn/jquery.min.js"></script>
+    <script src="dist/js/lightbox.js"></script>
+
 </body>
 </html>
