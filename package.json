@@ -2,18 +2,20 @@
   "name": "osiris",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html rover-curiosity.html rover-opportunity.html rover-spirit.html",
+    "build": "parcel build index.html rover-curiosity.html rover-opportunity.html rover-spirit.html"
   },
   "author": "Abhishek Misar",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.26.12",
-    "gulp": "^4.0.2",
-    "gulp-sass": "^4.1.0"
+    "parcel": "^2.0.0-beta.1",
+    "sass": "^1.29.0"
   },
   "dependencies": {
-    "lightbox2": "^2.11.3"
+    "core-js": "^3.7.0",
+    "jquery": "^3.5.1",
+    "regenerator-runtime": "^0.13.7"
   }
 }

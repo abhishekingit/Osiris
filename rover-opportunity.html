@@ -8,10 +8,13 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Osiris</title>
+  <title>Opportunity</title>
 
   <!-- Bootstrap core CSS -->
   <link href="./src/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!--Lightbox CSS-->
+  <link href="./src/vendor/dist/css/lightbox.css" rel="stylesheet" />
 
   <!-- Custom fonts for this template -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
@@ -38,8 +41,8 @@
       
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">Home</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
@@ -56,60 +59,69 @@
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
-            <h1 class="mb-1">The Future is <span style="color: #eb5757;">Red!</span></h1>
-            <h4 class="mb-1">Get started by selecting a rover</h1>
+            <h1 class="mb-1">Opportunity on <span style="color: #eb5757;">Mars</span></h1>
+            <h4 class="mb-1">Select a Camera and enter a Martian SOL</h1>
           </div>
-          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto mt-5">
             <!-- <form>
               <div class="form-row">
                 <div class="col-12 col-md-9 mb-2 mb-md-0">
-                  <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
+                  <input type="martian-sol" class="form-control form-control-lg" placeholder="Enter Martian SOL...">
                 </div>
                 <div class="col-12 col-md-3">
-                  <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
+                  <button type="submit" class="btn btn-block btn-lg btn-primary">Search</button>
                 </div>
               </div>
             </form> -->
+            <form>
+              <div class="form-row align-center">
+                <div class="col-auto my-1">
+                  <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                    <option selected>Camera</option>
+                    <option value="1">Front Hazard avoidance Camera</option>
+                    <option value="2">Rear Hazard avoidance Camera</option>
+                    <option value="3">Navigation Camera </option>
+                    <option value="4">Panoramic Camera</option>
+                    <option value="5">Mini-TES</option>
+                    
+                  </select>
+                </div>
+  
+                <div class="col-auto my-1">
+                  <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                  <input type="martian-sol" class="form-control form-control-md" placeholder="Enter Martian SOL...">
+                </div>
+               
+                <div class="col-auto my-1">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </header>
 
-    <section class="cards bg-light text-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="cards-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-              <a href="rover-curiosity.html">
-                <div class="cards-curiosity d-flex">
-                  <h3 class="cards-curiosity-title">Curiosity</h3>
-                </div>   
-              </a>
-                         
-              <p class="lead mb-0"></p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="cards-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-              <a href="rover-opportunity.html">
-                <div class="cards-opportunity d-flex"></div>
-                <h3 class="cards-opportunity-title">Opportunity</h3>
-              </a>
-              
-              <p class="lead mb-0"></p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="cards-item mx-auto mb-0 mb-lg-3">
-              <a href="rover-spirit.html">
-                <div class="cards-spirit d-flex"></div>
-                <h3 class="cards-spirit-title">Spirit</h3>
-              </a>
-              
-              <p class="lead mb-0"></p>
-            </div>
-          </div>
+    <!--Images showcase-->
+    <section class="showcase">
+      <div class="overlay"></div>
+      <div class="container p-0 my-4 image-results">
+        <h5>Start searching images by selecting a camera and enter the sol. Have fun!</h5>
+        <!-- <div class="links-img">
+          <a class="link" href="./src/img/Rover samples/FHAZ-1.jpg" data-lightbox="gallery" data-title="My caption">
+            <p>images/Curiosity/FHAZ-1.jpg</p>
+          </a>
         </div>
+
+        <div class="links-img">
+          <a class="link" href="./src/img/Rover samples/FHAZ-2.jpg" data-lightbox="gallery" data-title="My caption">
+            <p>images/Curiosity/FHAZ-2.jpg</p>
+          </a>
+        </div>         -->
+        
+        
+        
       </div>
     </section>
 
@@ -163,6 +175,9 @@
     <!-- Bootstrap core JavaScript -->
     <script src="./src/vendor/jquery/jquery.min.js"></script>
     <script src="./src/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- <script defer src="src/js/controller.js"></script> -->
+    <!--Lightbox2 and jquery JavaScript-->
+    <script src="./src/vendor/dist/js/lightbox-plus-jquery.js"></script>
+    <script defer src="src/js/controller.js"></script>
+
 </body>
 </html>

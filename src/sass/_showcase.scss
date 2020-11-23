@@ -1,0 +1,38 @@
+.showcase {
+    .links-img {
+        
+        background-color: $color-grey-1;
+        box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+        padding-left: 0.5rem;
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        .link {
+            text-decoration: none;
+            p {
+                font-size: 1rem;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+                padding-top: 0.5rem;
+                color: $color-grad-1;
+                
+    
+                
+            }
+            :hover {
+                color: $color-marsred;
+            }
+
+        }
+        
+
+
+    }
+    
+    nav {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+    
+}
