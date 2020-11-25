@@ -1,0 +1,181 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+header.masthead {
+  position: relative;
+  background-color: #343a40;
+  background: url("background1920.ddf66b3d.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+header.masthead .overlay {
+  position: absolute;
+  background-color: #000;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+header.masthead h1 {
+  font-size: 2rem;
+}
+header.masthead h4 {
+  font-size: 1.1rem;
+}
+header.masthead form button {
+  background-color: #eb5757;
+  border-color: #eb5757;
+}
+header.masthead form button:hover {
+  background-color: #E27B58;
+  border-color: #E27B58;
+}
+@media (min-width: 768px) {
+  header.masthead {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+  header.masthead h1 {
+    font-size: 3rem;
+  }
+}
+
+.cards {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+.cards-item {
+  max-width: 20rem;
+}
+.cards-curiosity {
+  height: 28rem;
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url(curiosity.0c72e334.jpg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.25);
+  position: relative;
+  border-radius: 3px;
+}
+.cards-curiosity-title {
+  color: #fff;
+  font-size: 2.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.cards-opportunity {
+  height: 28rem;
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url(opportunity.833e59fb.jpg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.25);
+  position: relative;
+  border-radius: 3px;
+}
+.cards-opportunity-title {
+  color: #fff;
+  font-size: 2.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.cards-spirit {
+  height: 28rem;
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url(spirit.571880c2.jpg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.25);
+  position: relative;
+  border-radius: 3px;
+}
+.cards-spirit-title {
+  color: #fff;
+  font-size: 2.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+footer.footer {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  color: #FFFFFF;
+}
+footer.footer li > a {
+  color: #eb5757;
+}
+
+.showcase .links-img {
+  background-color: #f7f7f7;
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  padding-left: 0.5rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+.showcase .links-img .link {
+  text-decoration: none;
+}
+.showcase .links-img .link p {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  color: #eb5757;
+}
+.showcase .links-img .link :hover {
+  color: #E27B58;
+}
+.showcase nav {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.spinner {
+  margin: 5rem auto;
+  text-align: center;
+}
+.spinner svg {
+  height: 6rem;
+  width: 6rem;
+  fill: #E27B58;
+  animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=main.df629e2c.css.map */
