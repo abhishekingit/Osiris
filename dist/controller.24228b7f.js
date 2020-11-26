@@ -5017,6 +5017,10 @@ exports.loadRoverImages = exports.state = void 0;
 
 var _regeneratorRuntime = require("regenerator-runtime");
 
+var _config = require("./config");
+
+var _helper = require("./helper");
+
 const state = {
   images: {}
 };
@@ -5024,26 +5028,19 @@ exports.state = state;
 
 const loadRoverImages = async function () {
   try {
-    const res = await fetch('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=k05EDRoqBwSSXuNVNQzp8r4BjvisSjHkZXCq7zh6');
-    const data = await res.json();
-    console.log(res, data);
-
-    if (!res.ok) {
-      throw new Error(`${data.error.message} ${res.status}`);
-    }
-
+    const data = await (0, _helper.getJSON)(`${_config.API_URL}/${_config.ROVER}/photos?sol=${_config.SOL}&camera=${_config.CAMERA}&api_key=${_config.API_KEY}`);
     const results = data.photos;
     state.images = {
       results
     };
     console.log(state.images);
   } catch (err) {
-    alert(err);
+    console.error(`${err}`);
   }
 };
 
 exports.loadRoverImages = loadRoverImages;
-},{"regenerator-runtime":"e155e0d3930b156f86c48e8d05522b16"}],"e155e0d3930b156f86c48e8d05522b16":[function(require,module,exports) {
+},{"regenerator-runtime":"e155e0d3930b156f86c48e8d05522b16","./config":"09212d541c5c40ff2bd93475a904f8de","./helper":"ca5e72bede557533b2de19db21a2a688"}],"e155e0d3930b156f86c48e8d05522b16":[function(require,module,exports) {
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -5793,7 +5790,51 @@ try {
   Function("r", "regeneratorRuntime = r")(runtime);
 }
 
-},{}],"d604c62fd6a61a8d1d5637a44795e4b6":[function(require,module,exports) {
+},{}],"09212d541c5c40ff2bd93475a904f8de":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.API_KEY = exports.CAMERA = exports.SOL = exports.ROVER = exports.API_URL = void 0;
+const API_URL = 'https://api.nasa.gov/mars-photos/api/v1/rovers';
+exports.API_URL = API_URL;
+const ROVER = 'curiosity';
+exports.ROVER = ROVER;
+const SOL = '1000';
+exports.SOL = SOL;
+const CAMERA = 'fhaz';
+exports.CAMERA = CAMERA;
+const API_KEY = 'k05EDRoqBwSSXuNVNQzp8r4BjvisSjHkZXCq7zh6';
+exports.API_KEY = API_KEY;
+},{}],"ca5e72bede557533b2de19db21a2a688":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getJSON = void 0;
+
+var _regeneratorRuntime = require("regenerator-runtime");
+
+const getJSON = async function (url) {
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    console.log(res, data);
+
+    if (!res.ok) {
+      throw new Error(`${data.error.message} ${res.status}`);
+    }
+
+    return data;
+  } catch (err) {
+    throw err;
+  }
+};
+
+exports.getJSON = getJSON;
+},{"regenerator-runtime":"e155e0d3930b156f86c48e8d05522b16"}],"d604c62fd6a61a8d1d5637a44795e4b6":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
