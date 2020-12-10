@@ -8,10 +8,10 @@ export const state = {
     images : {},
 };
     
-export const loadRoverImages = async function ( ) {
+export const loadRoverImages = async function (camquery, solquery) {
     try {
 
-        const data = await getJSON(`${API_URL}/${ROVER}/photos?sol=${SOL}&camera=${CAMERA}&api_key=${API_KEY}`);
+        const data = await getJSON(`${API_URL}/${ROVER}/photos?sol=${solquery}&camera=${camquery}&api_key=${API_KEY}`);
         
         const results = data.photos;
         state.images = {
@@ -21,8 +21,10 @@ export const loadRoverImages = async function ( ) {
 
     } catch(err) {
         console.error(`${err}`);
+        throw err;
 
     }
     
 
 };
+

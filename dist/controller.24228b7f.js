@@ -471,6 +471,8 @@ var model = _interopRequireWildcard(require("./model"));
 
 var _imageView = _interopRequireDefault(require("./views/imageView"));
 
+var _searchView = _interopRequireDefault(require("./views/searchView"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
@@ -480,10 +482,15 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 // console.log('TEST');
 const controlRoverData = async function () {
   try {
+    const [cam, sol] = _searchView.default.getQuery();
+
+    console.log(sol, cam);
+    if (!cam || !sol) return;
+
     _imageView.default.renderSpinner(); //loading the images
 
 
-    await model.loadRoverImages();
+    await model.loadRoverImages(cam, sol);
     const {
       images
     } = model.state; //rendering the images
@@ -494,8 +501,12 @@ const controlRoverData = async function () {
   }
 };
 
-controlRoverData();
-},{"core-js/modules/es.typed-array.float32-array":"d5ed5e3a2e200dcf66c948e6350ae29c","core-js/modules/es.typed-array.float64-array":"49914eeba57759547672886c5961b9e4","core-js/modules/es.typed-array.int8-array":"1fc9d0d9e9c4ca72873ee75cc9532911","core-js/modules/es.typed-array.int16-array":"6ba53210946e69387b5af65ca70f5602","core-js/modules/es.typed-array.int32-array":"52f07ad61480c3da8b1b371346f2b755","core-js/modules/es.typed-array.uint8-array":"6042ea91f038c74624be740ff17090b9","core-js/modules/es.typed-array.uint8-clamped-array":"47e53ff27a819e98075783d2516842bf","core-js/modules/es.typed-array.uint16-array":"20f511ab1a5fbdd3a99ff1f471adbc30","core-js/modules/es.typed-array.uint32-array":"8212db3659c5fe8bebc2163b12c9f547","core-js/modules/es.typed-array.from":"183d72778e0f99cedb12a04e35ea2d50","core-js/modules/es.typed-array.of":"2ee3ec99d0b3dea4fec9002159200789","core-js/modules/web.immediate":"140df4f8e97a45c53c66fead1f5a9e92","core-js/modules/web.url":"a66c25e402880ea6b966ee8ece30b6df","core-js/modules/web.url.to-json":"6357c5a053a36e38c0e24243e550dd86","core-js/modules/web.url-search-params":"2494aebefd4ca447de0ef4cfdd47509e","./model":"aabf248f40f7693ef84a0cb99f385d1f","./views/imageView":"d604c62fd6a61a8d1d5637a44795e4b6"}],"d5ed5e3a2e200dcf66c948e6350ae29c":[function(require,module,exports) {
+const init = function () {
+  _searchView.default.addHandlerSearch(controlRoverData);
+};
+
+init();
+},{"core-js/modules/es.typed-array.float32-array":"d5ed5e3a2e200dcf66c948e6350ae29c","core-js/modules/es.typed-array.float64-array":"49914eeba57759547672886c5961b9e4","core-js/modules/es.typed-array.int8-array":"1fc9d0d9e9c4ca72873ee75cc9532911","core-js/modules/es.typed-array.int16-array":"6ba53210946e69387b5af65ca70f5602","core-js/modules/es.typed-array.int32-array":"52f07ad61480c3da8b1b371346f2b755","core-js/modules/es.typed-array.uint8-array":"6042ea91f038c74624be740ff17090b9","core-js/modules/es.typed-array.uint8-clamped-array":"47e53ff27a819e98075783d2516842bf","core-js/modules/es.typed-array.uint16-array":"20f511ab1a5fbdd3a99ff1f471adbc30","core-js/modules/es.typed-array.uint32-array":"8212db3659c5fe8bebc2163b12c9f547","core-js/modules/es.typed-array.from":"183d72778e0f99cedb12a04e35ea2d50","core-js/modules/es.typed-array.of":"2ee3ec99d0b3dea4fec9002159200789","core-js/modules/web.immediate":"140df4f8e97a45c53c66fead1f5a9e92","core-js/modules/web.url":"a66c25e402880ea6b966ee8ece30b6df","core-js/modules/web.url.to-json":"6357c5a053a36e38c0e24243e550dd86","core-js/modules/web.url-search-params":"2494aebefd4ca447de0ef4cfdd47509e","./model":"aabf248f40f7693ef84a0cb99f385d1f","./views/imageView":"d604c62fd6a61a8d1d5637a44795e4b6","./views/searchView":"c5d792f7cac03ef65de30cc0fbb2cae7"}],"d5ed5e3a2e200dcf66c948e6350ae29c":[function(require,module,exports) {
 var createTypedArrayConstructor = require('../internals/typed-array-constructor');
 
 // `Float32Array` constructor
@@ -5026,9 +5037,9 @@ const state = {
 };
 exports.state = state;
 
-const loadRoverImages = async function () {
+const loadRoverImages = async function (camquery, solquery) {
   try {
-    const data = await (0, _helper.getJSON)(`${_config.API_URL}/${_config.ROVER}/photos?sol=${_config.SOL}&camera=${_config.CAMERA}&api_key=${_config.API_KEY}`);
+    const data = await (0, _helper.getJSON)(`${_config.API_URL}/${_config.ROVER}/photos?sol=${solquery}&camera=${camquery}&api_key=${_config.API_KEY}`);
     const results = data.photos;
     state.images = {
       results
@@ -5036,6 +5047,7 @@ const loadRoverImages = async function () {
     console.log(state.images);
   } catch (err) {
     console.error(`${err}`);
+    throw err;
   }
 };
 
@@ -6036,6 +6048,47 @@ function relative(from, to) {
 
 module.exports._dirname = dirname;
 module.exports._relative = relative;
-},{"./bundle-manifest":"ba8df6b71e73837c465d69bebde6e64d"}]},{},["44773641ce1dd322c2ddaf0951cb714a","4393976863a23052dc8249e696fa2658","175e469a7ea7db1c8c0744d04372621f"], null)
+},{"./bundle-manifest":"ba8df6b71e73837c465d69bebde6e64d"}],"c5d792f7cac03ef65de30cc0fbb2cae7":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classPrivateFieldGet(receiver, privateMap) { var descriptor = privateMap.get(receiver); if (!descriptor) { throw new TypeError("attempted to get private field on non-instance"); } if (descriptor.get) { return descriptor.get.call(receiver); } return descriptor.value; }
+
+var _parentEl = new WeakMap();
+
+class SearchView {
+  constructor() {
+    _parentEl.set(this, {
+      writable: true,
+      value: document.querySelector('.search')
+    });
+  }
+
+  getQuery() {
+    let Cam = _classPrivateFieldGet(this, _parentEl).querySelector(".custom-select").value;
+
+    let Sol = _classPrivateFieldGet(this, _parentEl).querySelector(".form-control").value;
+
+    console.log(Sol);
+    return [Cam, Sol];
+  }
+
+  addHandlerSearch(handler) {
+    _classPrivateFieldGet(this, _parentEl).addEventListener('submit', function (e) {
+      e.preventDefault();
+      handler();
+    });
+  }
+
+}
+
+var _default = new SearchView();
+
+exports.default = _default;
+},{}]},{},["44773641ce1dd322c2ddaf0951cb714a","4393976863a23052dc8249e696fa2658","175e469a7ea7db1c8c0744d04372621f"], null)
 
 //# sourceMappingURL=controller.24228b7f.js.map
