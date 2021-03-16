@@ -5802,23 +5802,6 @@ try {
   Function("r", "regeneratorRuntime = r")(runtime);
 }
 
-},{}],"09212d541c5c40ff2bd93475a904f8de":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.API_KEY = exports.CAMERA = exports.SOL = exports.ROVER = exports.API_URL = void 0;
-const API_URL = 'https://api.nasa.gov/mars-photos/api/v1/rovers';
-exports.API_URL = API_URL;
-const ROVER = 'curiosity';
-exports.ROVER = ROVER;
-const SOL = '1000';
-exports.SOL = SOL;
-const CAMERA = 'fhaz';
-exports.CAMERA = CAMERA;
-const API_KEY = 'k05EDRoqBwSSXuNVNQzp8r4BjvisSjHkZXCq7zh6';
-exports.API_KEY = API_KEY;
 },{}],"ca5e72bede557533b2de19db21a2a688":[function(require,module,exports) {
 "use strict";
 
