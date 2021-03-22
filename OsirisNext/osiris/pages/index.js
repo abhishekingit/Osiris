@@ -42,7 +42,7 @@ export default function Home() {
                   <Text fontSize="4xl" mb={1} fontWeight="semibold" color="white">Explore the Martian surface</Text>
                   <Text fontSize="1xl" fontWeight="light" color="white">Browse through image data gathered by NASA's Curiosity, Opportunity, and Spirit rovers on Mars</Text>
                   <Stack direction="row">
-                    <Button rightIcon={<ArrowForwardIcon/>} mt={8} colorScheme="red" variant="solid">Get Started</Button>
+                    <Button as="a" href="/rover"  rightIcon={<ArrowForwardIcon/>} mt={8} colorScheme="red" variant="solid">Get Started</Button>
                   </Stack>
                 </VStack>
                 
