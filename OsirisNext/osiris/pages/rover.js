@@ -16,7 +16,7 @@ import {Box, Text, WrapItem, useToast} from '@chakra-ui/react';
 import Image from "next/image";
 import {getPhotos} from '../lib/api';
 
-const API_KEY = process.env.NEXT_PUBLIC_ROVER_API_KEY;
+
 
 
 
@@ -66,7 +66,7 @@ export default function Rover({data}) {
 
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const data = await getPhotos();
     return {
         props: {

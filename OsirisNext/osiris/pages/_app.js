@@ -4,8 +4,8 @@ import Fonts from './Fonts';
 
 const theme = extendTheme({
   fonts: {
-    heading: "Poppins",
-    body: "Poppins",
+    heading: "Inter",
+    body: "Inter",
   },
 });
 // import '../styles/globals.css'
