@@ -1,5 +1,5 @@
 module.exports = {
     images: {
-      domains: ["mars.jpl.nasa.gov"],
+      domains: ["mars.jpl.nasa.gov", "mars.nasa.gov"],
     },
   };

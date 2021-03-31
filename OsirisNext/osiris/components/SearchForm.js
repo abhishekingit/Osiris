@@ -13,7 +13,7 @@ const SearchForm = ({submitMethod}) => {
         <FormControl onSubmit={submitMethod} id="Rover" isRequired display="flex" >
             <Box w="15rem" mr={8}>
                 <FormLabel color="white" fontWeight="semibold">Rover</FormLabel>
-                <Select bg="white" color="black" placeholder="Select Rover">
+                <Select id="rover" bg="white" color="black" placeholder="Select Rover">
                     <option>Curiosity</option>
                     <option>Opportunity</option>
                     <option>Spirit</option>
